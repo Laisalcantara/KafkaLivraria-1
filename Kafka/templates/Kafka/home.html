@@ -20,7 +20,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="js/flipbook.js" defer></script>
+    <script src="{%static 'C:\testeDjango\assets\static\js\slider.js'%}" defer></script>
 
 </head>
 
@@ -28,19 +28,22 @@
 
     <header>
 
-     <!-- Logo e caixa de pesquisa -->
-     <img id="kafkaLogo" src="{%static 'C:\testeDjango\assets\static\img\header\kafkaLogo.png' %}">
-     <div class="search_box">
-         <input type="text" placeholder="Pesquise aqui">
-         <i id="search" class="fa-solid fa-magnifying-glass"></i>
-     </div>
+        <!-- Logo e caixa de pesquisa -->
+        <img id="kafkaLogo" src="{%static 'C:\testeDjango\assets\static\img\header\kafkaLogo.png' %}">
+        <div class="search_box">
+            <input type="text" placeholder="Pesquise aqui">
+            <i id="search" class="fa-solid fa-magnifying-glass"></i>
+        </div>
 
-     <!-- Lista de icons -->
-     <ul>
-         <li><a href="#" class="iconMenu"><img src="{%static 'C:\testeDjango\assets\static\img\header\iconHeart.png' %}"></a></li>
-         <li><a href="#" class="iconMenu"><img src="{%static 'C:\testeDjango\assets\static\img\header\iconCar.png' %}"></a></li>
-         <li><a href="#" class="iconMenu"><img src="{%static 'C:\testeDjango\assets\static\img\header\iconUser.png' %}"></a></li>
-     </ul>
+        <!-- Lista de icons -->
+        <ul>
+            <li><a href="#" class="iconMenu"><img
+                        src="{%static 'C:\testeDjango\assets\static\img\header\iconHeart.png' %}"></a></li>
+            <li><a href="#" class="iconMenu"><img
+                        src="{%static 'C:\testeDjango\assets\static\img\header\iconCar.png' %}"></a></li>
+            <li><a href="#" class="iconMenu"><img
+                        src="{%static 'C:\testeDjango\assets\static\img\header\iconUser.png' %}"></a></li>
+        </ul>
 
     </header>
 
@@ -54,11 +57,11 @@
                 <!-- <div class="div-submenu"> -->
                 <ul>
                     <li class="subMenu"><a href="#">Geek</a></li>
-                    <li class="subMenu"><a href="ebook.html">Ebook</a></li>
-                    <li class="subMenu"><a href="#">Infantil</a></li>
+                    <li class="subMenu"><a href="{%url 'ebook'%}">Ebook</a></li>
+                    <li class="subMenu"><a href="{%url 'infantil'%}">Infantil</a></li>
                     <li class="subMenu"><a href="#">Ofertas</a></li>
                     <li class="subMenu"><a href="#">Estudos</a></li>
-                    <li class="subMenu"><a href="#">Importados</a></li>
+                    <li class="subMenu"><a href="{%url 'importados'%}">Importados</a></li>
                 </ul>
                 </div>
             </li>
@@ -74,12 +77,22 @@
             <!-- Menu de icones -->
             <div class="icons-circulo">
                 <ul>
-                    <li><a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\home\hand-spock-solid.png'%}" alt=""></a></li>
-                    <li><a href="ebook.html"><img src="{%static 'C:\testeDjango\assets\static\img\home\mobile-screen-button-solid.png'%}" alt=""></a></li>
-                    <li><a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\home\cubes-stacked-solid.png'%}" alt=""></a></li>
-                    <li><a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\home\tags-solid.png'%}" alt=""></a></li>
-                    <li><a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\home\graduation-cap-solid.png'%}" alt=""></a></li>
-                    <li><a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\home\earth-americas-solid.png'%}" alt=""></a></li>
+                    <li><a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\home\hand-spock-solid.png'%}"
+                                alt=""></a></li>
+                    <li><a href="{%url 'ebook'%}"><img
+                                src="{%static 'C:\testeDjango\assets\static\img\home\mobile-screen-button-solid.png'%}"
+                                alt=""></a></li>
+                    <li><a href="{%url 'infantil'%}"><img
+                                src="{%static 'C:\testeDjango\assets\static\img\home\cubes-stacked-solid.png'%}"
+                                alt=""></a></li>
+                    <li><a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\home\tags-solid.png'%}"
+                                alt=""></a></li>
+                    <li><a href="#"><img
+                                src="{%static 'C:\testeDjango\assets\static\img\home\graduation-cap-solid.png'%}"
+                                alt=""></a></li>
+                    <li><a href="{%url 'importados'%}"><img
+                                src="{%static 'C:\testeDjango\assets\static\img\home\earth-americas-solid.png'%}"
+                                alt=""></a></li>
                 </ul>
             </div>
         </section>
@@ -101,14 +114,16 @@
                 <!-- Capa do livro -->
                 <div class="livro">
                     <!-- Usando o style inline pois o django não reconhece o background-image no css. -->
-                    <div class="capa" style="background-image: url({%static 'C:\testeDjango\assets\static\img\home\mais-vendidos.png'%})">
+                    <div class="capa"
+                        style="background-image: url({%static 'C:\testeDjango\assets\static\img\home\mais-vendidos.png'%})">
                         <label for="checkbox-capa"><i class="fas fa-chevron-right"></i></label>
                     </div>
 
                     <!-- Página 1 -->
                     <div class="pagina" id="pag1">
 
-                        <div class="pagina-esquerda" style="background-image: url({%static 'C:\testeDjango\assets\static\img\home\folhaDeRosto.png'%})">
+                        <div class="pagina-esquerda"
+                            style="background-image: url({%static 'C:\testeDjango\assets\static\img\home\folhaDeRosto.png'%})">
 
 
                             <label class="esquerda" for="checkbox-pag1"><i class="fas fa-chevron-right"></i></label>
@@ -117,7 +132,8 @@
 
                         <div class="pagina-direita" id="verso">
 
-                            <img id="capa" src="{%static 'C:\testeDjango\assets\static\img\home\geek-onePiece.jpg'%}" alt="Capa do Mangá One Piece volume 1.">
+                            <img id="capa" src="{%static 'C:\testeDjango\assets\static\img\home\geek-onePiece.jpg'%}"
+                                alt="Capa do Mangá One Piece volume 1.">
                             <label class="direita" for="checkbox-pag1"><i class="fas fa-chevron-left"></i></label>
 
                         </div>
@@ -182,7 +198,8 @@
 
                         <div class="pagina-direita" id="verso">
 
-                            <img id="capa" src="{%static 'C:\testeDjango\assets\static\img\home\infantil-dinossauro.jpg'%}"
+                            <img id="capa"
+                                src="{%static 'C:\testeDjango\assets\static\img\home\infantil-dinossauro.jpg'%}"
                                 alt="Uma area arborizada com um dinoussauro verde anda com uma expressão triste. Ao fundo outros 3 dinoussauros brincam e sorriem.">
                             <label class="direita" for="checkbox-pag3"><i class="fas fa-chevron-left"></i></label>
 
@@ -330,16 +347,19 @@
 
             <!-- Cards -->
             <div class="area-card">
+
                 <h2>Ebook</h2>
 
-                <div class="slider">
+                <div class="slider js-slider">
 
                     <!-- Card 1 -->
                     <div class="card">
 
-                        <div class="fav">
+                        <div class="fav"
+                            style="background-image: url({%static 'C:\testeDjango\assets\static\img\ebook\heart-regular-24.png'%})">
                         </div>
-                        <img class="imagem" src="{%static 'C:\testeDjango\assets\static\img\ebook\a-hipotese-do-amor.jpg'%}" alt="">
+                        <img class="imagem"
+                            src="{%static 'C:\testeDjango\assets\static\img\ebook\a-hipotese-do-amor.jpg'%}" alt="">
                         <h3>A Hipótese do Amor</h3>
 
                         <p class="autor">Ali Hazzewood</p>
@@ -350,7 +370,8 @@
                             <i class="fa-regular fa-star"></i>
                         </div>
                         <div class="sinopse">
-                            <p>Olive Smith, aluna do doutorado em Biologia da Universidade Stanford, acredita na ciência
+                            <p>Olive Smith, aluna do doutorado em Biologia da Universidade Stanford, acredita na
+                                ciência
                                 – não
                                 em
                                 algo incontrolável como o amor.</p>
@@ -364,9 +385,11 @@
                     <!-- Card 2 -->
                     <div class="card">
 
-                        <div class="fav">
+                        <div class="fav"
+                            style="background-image: url({%static 'C:\testeDjango\assets\static\img\ebook\heart-regular-24.png'%})">
                         </div>
-                        <img class="imagem" src="{%static 'C:\testeDjango\assets\static\img\ebook\assombrando-adeline.jpg'%}" alt="">
+                        <img class="imagem"
+                            src="{%static 'C:\testeDjango\assets\static\img\ebook\assombrando-adeline.jpg'%}" alt="">
                         <h3>Assombrando Adeline</h3>
                         <p class="autor"> H.D. Carlton </p>
                         <div class="estrelas"><i class="fa-solid fa-star"></i>
@@ -389,9 +412,11 @@
                     <!-- Card 3 -->
                     <div class="card">
 
-                        <div class="fav">
+                        <div class="fav"
+                            style="background-image: url({%static 'C:\testeDjango\assets\static\img\ebook\heart-regular-24.png'%})">
                         </div>
-                        <img class="imagem" src="{%static 'C:\testeDjango\assets\static\img\ebook\girlslikegirls.jpg'%}" alt="">
+                        <img class="imagem" src="{%static 'C:\testeDjango\assets\static\img\ebook\girlslikegirls.jpg'%}"
+                            alt="">
                         <h3>Girls Like Girls</h3>
 
                         <p class="autor">HAYLEY KIYOKO</p>
@@ -402,7 +427,8 @@
                             <i class="fa-regular fa-star"></i>
                         </div>
                         <div class="sinopse">
-                            <p>Coley sente que não é a mesma desde a morte da mãe. Forçada a morar no interior do Oregon
+                            <p>Coley sente que não é a mesma desde a morte da mãe. Forçada a morar no interior do
+                                Oregon
                                 com o
                                 pai que abandonou a família, a garota se vê sozinha em um lugar desconhecido e
                                 conservador.</p>
@@ -416,9 +442,11 @@
                     <!-- Card 4 -->
                     <div class="card">
 
-                        <div class="fav">
+                        <div class="fav"
+                            style="background-image: url({%static 'C:\testeDjango\assets\static\img\ebook\heart-regular-24.png'%})">
                         </div>
-                        <img class="imagem" src="{%static 'C:\testeDjango\assets\static\img\ebook\circo-sombrio.jpg'%}" alt="">
+                        <img class="imagem" src="{%static 'C:\testeDjango\assets\static\img\ebook\circo-sombrio.jpg'%}"
+                            alt="">
                         <h3>Circo Sombrio: contos, terror e psicopatia eBook</h3>
 
                         <p class="autor">Ariel Yoshida </p>
@@ -429,7 +457,8 @@
                             <i class="fa-regular fa-star"></i>
                         </div>
                         <div class="sinopse">
-                            <p> São 20 contos aterrorizantes. Uma mochileira atacada na floresta, um encontro romântico
+                            <p> São 20 contos aterrorizantes. Uma mochileira atacada na floresta, um encontro
+                                romântico
                                 que se torna brutal; um homem desolado que se torna atroz.</p>
                         </div>
                         <div class="preco">
@@ -438,34 +467,35 @@
                         <a href="#"><button>Comprar</button></a>
                     </div>
 
-
                 </div>
+            </div>
             </div>
 
         </section>
 
-        <!-- Footer -->
-        <footer>
-            <div class="area-footer">
-
-                <!-- Icons -->
-                <div class="i-r">
-                    <a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\footer\twitter.png'%}" alt=""></i></a>
-                    <a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\footer\github.png'%}" alt=""></a>
-                    <a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\footer\linkedin.png'%}" alt=""></a>
-                </div>
-
-            </div>
-
-            
-            <div class="pFooter">
-                <p>Desenvolvido pelo grupo 6 na aula de programação do <a href="">PDA</a> </p>
-            </div>
-
-
-        </footer>
-
     </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="area-footer">
+
+            <!-- Icons -->
+            <div class="i-r">
+                <a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\footer\twitter.png'%}" alt=""></i></a>
+                <a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\footer\github.png'%}" alt=""></a>
+                <a href="#"><img src="{%static 'C:\testeDjango\assets\static\img\footer\linkedin.png'%}" alt=""></a>
+            </div>
+
+        </div>
+
+
+        <div class="pFooter">
+            <p>Desenvolvido pelo grupo 6 na aula de programação do <a href="">PDA</a> </p>
+        </div>
+
+
+    </footer>
+
 
 </body>
 

@@ -38,6 +38,11 @@ header {
     margin-bottom: 0.3%;
 }
 
+#kafkaLogo a img {
+    width: 50%;
+    margin-bottom: 0.3%;
+}
+
 /* Alterando margem e estilização do ul */
 header ul {
     display: flex;

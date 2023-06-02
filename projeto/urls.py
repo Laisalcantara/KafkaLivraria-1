@@ -20,5 +20,5 @@ from django.urls import path, include #Include serve para incluir arquivos de ou
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Kafka.urls'))
+    path('', include('Kafka.urls')),
 ]

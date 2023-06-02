@@ -76,7 +76,7 @@
     box-shadow: 0 0 10px rgb(41, 41, 41);
     width: 100%;
     height: 600px;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: center;
 }
@@ -96,7 +96,6 @@
 
 /* Icon de Favorito */
 .slider .card .fav {
-    background-image: url(/site/html/img/ebook/heart-regular-24.png);
     position: absolute;
     height: 20px;
     width: 20px;
@@ -109,7 +108,7 @@
 
 /* Hover do icon de favorito */
 .slider .card .fav:hover {
-    background-image: url(/site/html/img/ebook/heart-solid-24.png);
+    background-image: url(/site/html/img/ebook/heart-solid-24.png) !important;
 }
 
 /* Estilização das estrelas */

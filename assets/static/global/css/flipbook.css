@@ -1,4 +1,3 @@
-{% load static %};
 @charset "utf-8";
 
 /* Variaveis */
@@ -38,7 +37,6 @@
 }
 
 .capa {
-    background: url({%static 'C:\testeDjango\assets\static\img\home\mais-vendidos.png'%});
     width: 340px;
     width: 490px;
     border-radius: 0 15px 15px 0;
