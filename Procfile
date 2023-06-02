@@ -1,1 +1,1 @@
-web: gunicorn Kafka.wsgi --log-file -
+web: gunicorn projeto.wsgi --log-file -
